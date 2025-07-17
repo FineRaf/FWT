@@ -1,0 +1,134 @@
+@import "../../../index.scss";
+
+:root[data-theme="light"] {
+  --active-button-background-color: #1212120D;
+}
+
+:root[data-theme="dark"] {
+  --active-button-background-color: var(--primary-dark-gray);
+}
+
+.containerbuttons{
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.buttons{
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: var(--pagination-bg-color);  
+    color: var(--pagination-text-color);      
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+.buttons:hover{ 
+  text-decoration: underline;
+}
+
+
+.arrowButton {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: var(--pagination-bg-color);
+  color: var(--pagination-text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.arrowButton:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+.arrowButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.activeButton {
+  background-color: var(--active-button-background-color);
+}
+
+@media (min-width: 1280px) {
+  .containerbuttons {
+    margin-top: 20px;
+    gap: 5px;
+  }
+  
+  .buttons {
+    margin: 0 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  
+  .arrowButton {
+    margin: 0 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1140px) and (max-width: 1279px) {
+  .containerbuttons {
+    margin-top: 20px;
+    gap: 5px;
+  }
+  
+  .buttons {
+    margin: 0 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  
+  .arrowButton {
+    margin: 0 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1139px) {
+  .containerbuttons {
+    margin-top: 15px;
+    gap: 4px;
+  }
+  
+  .buttons {
+    margin: 0 4px;
+    padding: 4px 8px;
+    font-size: 13px;
+  }
+  
+  .arrowButton {
+    margin: 0 4px;
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .containerbuttons {
+    margin-top: 10px;
+    gap: 3px;
+  }
+  
+  .buttons {
+    margin: 0 3px;
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+  
+  .arrowButton {
+    margin: 0 3px;
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+}

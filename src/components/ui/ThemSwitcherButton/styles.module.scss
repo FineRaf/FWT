@@ -1,0 +1,28 @@
+@import "../../../index.scss";
+
+:root[data-theme="light"]{}
+
+.button{
+  border: unset;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover,&:active{
+    background-color: hsl(0, 0%, 95%, 1);
+  }
+}
+:root[data-theme="dark"] {
+  .button{
+    color: white;
+    background-color: hsl(0, 0%, 100%, 0.11);
+    &:hover{
+      background-color: hsl(0, 0%, 100%, 0.11);
+    }
+  }
+}

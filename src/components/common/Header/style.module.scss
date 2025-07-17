@@ -1,0 +1,49 @@
+@import '../../../index.scss';
+
+:root{
+    --header-height: 80px;
+}
+
+.header{
+    height: var(--header-height);
+    background-color: var(--header-background-color);
+    width: 100%;
+
+    .content{
+        width: var(--container-desktop);
+        margin: 0 auto;
+        padding: 0 var(--margin-desktop);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1280px) {
+    .header .content {
+        width: 1240px;
+        padding: 0 20px;
+    }
+}
+
+@media (min-width: 1140px) and (max-width: 1279px) {
+    .header .content {
+        width: 1240px;
+        padding: 0 100px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1139px) {
+    .header .content {
+        width: 728px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header .content {
+        width: 280px;
+        padding: 0 20px;
+    }
+}

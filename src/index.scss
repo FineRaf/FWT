@@ -1,0 +1,269 @@
+:root {
+  --primary-black: #121212;
+  --primary-white: #ffffff;
+  --primary-light-gray: #DEDEDE;
+  --primary-dark-gray: #575757;
+
+  --secondary-white: #FCFCFC;
+  --secondary-black: #1A1818;
+  --secondary-gray: #9C9C9C;
+  --accent-red: #9B4B4B;
+  --accent-gold: #AB8956;
+
+  --width-desktop: 1240px;
+  --grid-width-desktop: 1140px;
+  --columns-desktop: 12;
+  --gutter-desktop: 32px;
+  --margin-desktop: 100px;
+  --container-desktop: 1240px;
+
+  --body-background-color: var(--primary-white);
+  --header-background-color: var(--primary-white);
+  --logo-src: url("/logo_dark.svg");
+
+  --painting-info-bg: var(--primary-white);
+  --painting-name-color: var(--primary-black);
+  --painting-author-color: var(--primary-black);
+  --painting-year-color: var(--accent-red);
+  --painting-location-color: var(--accent-red);
+  --painting-line-color: var(--accent-red);
+
+  --search-bg: var(--primary-white);
+  --search-border: var(--primary-black);
+  --search-input-color: var(--primary-black);
+  --search-icon-color: var(--primary-dark-gray);
+
+  --pagination-text-color: var(--primary-black);
+  --pagination-bg-color: var(--primary-white);
+
+  --search-error-color: var(--primary-black);
+
+  --font-family-base: 'Inter', Arial, sans-serif;
+  --font-family-serif: 'Cormorant SC', serif;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-size-h1: 16px;
+  --font-size-h2: 12px;
+  --font-size-p-big: 16px;
+  --font-size-p-medium: 16px;
+  --font-size-p-base: 14px;
+  --font-size-p-small: 12px;
+  --font-size-caption: 12px;
+  --font-size-caption-small: 8px;
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --width-desktop: 1240px;
+    --grid-width-desktop: 1280px;
+    --columns-desktop: 12;
+    --gutter-desktop: 32px;
+    --margin-desktop: 20px;
+    --container-desktop: 1240px;
+  }
+}
+
+@media (min-width: 1140px) and (max-width: 1279px) {
+  :root {
+    --width-desktop: 1240px;
+    --grid-width-desktop: 1140px;
+    --columns-desktop: 12;
+    --gutter-desktop: 32px;
+    --margin-desktop: 100px;
+    --container-desktop: 1240px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1139px) {
+  :root {
+    --width-desktop: 728px;
+    --grid-width-desktop: 768px;
+    --columns-desktop: 8;
+    --gutter-desktop: 24px;
+    --margin-desktop: 20px;
+    --container-desktop: 728px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --width-desktop: 280px;
+    --grid-width-desktop: 320px;
+    --columns-desktop: 6;
+    --gutter-desktop: 5px;
+    --margin-desktop: 20px;
+    --container-desktop: 280px;
+  }
+}
+
+*,:after,:before{
+  box-sizing: border-box
+}
+
+body.dark{
+  --header-background-color: var(--primary-black);
+  --logo-src: url("/logo_light.svg");
+
+  --body-background-color: var(--primary-black);
+
+  --painting-info-bg: var(--primary-black);
+  --painting-name-color: var(--primary-white);
+  --painting-author-color: var(--primary-white);
+  --painting-year-color: var(--accent-gold);
+  --painting-location-color: var(--accent-gold);
+  --painting-line-color: var(--accent-gold);
+
+  --search-bg: var(--primary-black);
+  --search-border: var(--primary-white);
+  --search-input-color: var(--primary-white);
+  --search-icon-color: var(--primary-white);
+
+  --pagination-text-color: var(--primary-white);
+  --pagination-bg-color: var(--primary-black);
+
+  --search-error-color: var(--primary-white);
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: var(--body-background-color);
+  overflow-x: hidden;
+  max-width: 100vw;
+  color: var(--primary-light-gray);
+}
+
+@mixin container{
+  width: var(--container-desktop);
+  margin: 0 auto;
+  padding: 0 var(--margin-desktop);
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns-desktop), 1fr);
+  gap: var(--gutter-desktop);
+  width: var(--grid-width-desktop);
+  margin: 0 auto;
+}
+
+.container {
+  @include container;
+}
+
+.grid {
+  @include grid;
+}
+
+@media (min-width: 1280px) {
+  .container {
+    width: 1240px;
+    padding: 0 20px;
+  }
+
+  .grid {
+    width: 1280px;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (min-width: 1140px) and (max-width: 1279px) {
+  .container {
+    width: 1240px;
+    padding: 0 100px;
+  }
+
+  .grid {
+    width: 1140px;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1139px) {
+  .container {
+    width: 728px;
+    padding: 0 20px;
+  }
+
+  .grid {
+    width: 768px;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 280px;
+    padding: 0 20px;
+  }
+
+  .grid {
+    width: 320px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+  }
+}
+
+.h1 {
+  font-family: var(--font-family-serif);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-h1);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.h2 {
+  font-family: var(--font-family-serif);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-h2);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.p-big {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-p-big);
+  margin: 0;
+}
+
+.p-medium {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-p-medium);
+  margin: 0;
+}
+
+.p-base {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-p-base);
+  margin: 0;
+}
+
+.p-small {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-p-small);
+  margin: 0;
+}
+
+.caption {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-caption);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.caption-small {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-caption-small);
+  text-transform: uppercase;
+  margin: 0;
+}
